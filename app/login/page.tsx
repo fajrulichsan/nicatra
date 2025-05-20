@@ -1,17 +1,15 @@
 "use client"
 
 import React, { useState } from 'react';
-import { Button, Checkbox, Form, Input, Typography, Divider, message } from 'antd';
-import { UserOutlined, LockOutlined, GithubOutlined, GoogleOutlined, FacebookOutlined } from '@ant-design/icons';
+import { Button, Form, Input, Typography, message } from 'antd';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 const { Title, Text } = Typography;
 
 const LoginPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   const onFinish = (values: any) => {
     setLoading(true);
@@ -19,7 +17,7 @@ const LoginPage: React.FC = () => {
     setTimeout(() => {
       message.success('Login successful!');
       setLoading(false);
-      router.push('/dashboard');
+      window.location.href = '/dashboard'; 
     }, 1500);
   };
 
@@ -88,20 +86,10 @@ const LoginPage: React.FC = () => {
             >
               <Input.Password
                 prefix={<LockOutlined className="text-gray-400" />}
-                type="password"
                 placeholder="Password"
                 className="rounded-lg"
               />
             </Form.Item>
-
-            <div className="flex justify-between items-center mb-4 hidden" >
-              <Form.Item name="remember" valuePropName="checked" noStyle>
-                <Checkbox>Remember me</Checkbox>
-              </Form.Item>
-              <Link href="/forgot-password" className="text-blue-600 hover:text-blue-800">
-                Forgot password?
-              </Link>
-            </div>
 
             <Form.Item>
               <Button
