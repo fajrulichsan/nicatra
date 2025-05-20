@@ -97,7 +97,7 @@ const Navbar = ({
       <Input 
         prefix={<SearchOutlined className="text-gray-400" />} 
         placeholder="Search..." 
-        bordered={false}
+        variant="borderless"
         className="mr-4 w-64 bg-gray-50 rounded-lg"
       />
       
