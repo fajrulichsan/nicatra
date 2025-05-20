@@ -15,9 +15,7 @@ import {
   message
 } from 'antd';
 import { 
-  PlusOutlined, 
-  SearchOutlined, 
-  FilterOutlined, 
+  CheckOutlined,
   EditOutlined, 
   DeleteOutlined,
   CheckCircleOutlined,
@@ -270,6 +268,12 @@ const EmployeesPage: React.FC = () => {
       key: 'action',
       render: (_: any, record: Employee) => (
         <Space size="small">
+          <Button 
+            type="text"
+            icon={<CheckOutlined />} 
+            size="small" 
+            onClick={() => showEditModal(record)} 
+          />
           <Button 
             type="text" 
             icon={<EditOutlined />} 
