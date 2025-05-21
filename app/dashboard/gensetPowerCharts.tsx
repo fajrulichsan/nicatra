@@ -12,14 +12,14 @@ const { Option } = Select;
 const GensetPowerCharts = () => {
   // Sample time-series data for generator stations
   const timeSeriesData = [
-    { time: '08:00', 'Station Alpha': 3.2, 'Station Beta': 8.1, 'Station Delta': 2.5, 'Station Epsilon': 6.8, 'Station Zeta': 1.0 },
-    { time: '09:00', 'Station Alpha': 3.3, 'Station Beta': 8.3, 'Station Delta': 2.6, 'Station Epsilon': 6.9, 'Station Zeta': 1.1 },
-    { time: '10:00', 'Station Alpha': 3.4, 'Station Beta': 8.2, 'Station Delta': 2.7, 'Station Epsilon': 7.0, 'Station Zeta': 1.2 },
-    { time: '11:00', 'Station Alpha': 3.6, 'Station Beta': 8.4, 'Station Delta': 2.8, 'Station Epsilon': 7.1, 'Station Zeta': 1.3 },
-    { time: '12:00', 'Station Alpha': 3.5, 'Station Beta': 8.5, 'Station Delta': 2.9, 'Station Epsilon': 7.0, 'Station Zeta': 1.2 },
-    { time: '13:00', 'Station Alpha': 3.4, 'Station Beta': 8.6, 'Station Delta': 2.8, 'Station Epsilon': 6.9, 'Station Zeta': 1.1 },
-    { time: '14:00', 'Station Alpha': 3.3, 'Station Beta': 8.7, 'Station Delta': 2.7, 'Station Epsilon': 6.8, 'Station Zeta': 1.0 },
-    { time: '15:00', 'Station Alpha': 3.2, 'Station Beta': 8.5, 'Station Delta': 2.6, 'Station Epsilon': 6.7, 'Station Zeta': 0.9 },
+    { time: '08:00', 'Station Tarahan': 3.2, 'Station Sukamenanti': 8.1, 'Station Tanjung Karang': 2.5, 'Station Labuan Ratu': 6.8, 'Station Garuntang': 1.0 },
+    { time: '09:00', 'Station Tarahan': 3.3, 'Station Sukamenanti': 8.3, 'Station Tanjung Karang': 2.6, 'Station Labuan Ratu': 6.9, 'Station Garuntang': 1.1 },
+    { time: '10:00', 'Station Tarahan': 3.4, 'Station Sukamenanti': 8.2, 'Station Tanjung Karang': 2.7, 'Station Labuan Ratu': 7.0, 'Station Garuntang': 1.2 },
+    { time: '11:00', 'Station Tarahan': 3.6, 'Station Sukamenanti': 8.4, 'Station Tanjung Karang': 2.8, 'Station Labuan Ratu': 7.1, 'Station Garuntang': 1.3 },
+    { time: '12:00', 'Station Tarahan': 3.5, 'Station Sukamenanti': 8.5, 'Station Tanjung Karang': 2.9, 'Station Labuan Ratu': 7.0, 'Station Garuntang': 1.2 },
+    { time: '13:00', 'Station Tarahan': 3.4, 'Station Sukamenanti': 8.6, 'Station Tanjung Karang': 2.8, 'Station Labuan Ratu': 6.9, 'Station Garuntang': 1.1 },
+    { time: '14:00', 'Station Tarahan': 3.3, 'Station Sukamenanti': 8.7, 'Station Tanjung Karang': 2.7, 'Station Labuan Ratu': 6.8, 'Station Garuntang': 1.0 },
+    { time: '15:00', 'Station Tarahan': 3.2, 'Station Sukamenanti': 8.5, 'Station Tanjung Karang': 2.6, 'Station Labuan Ratu': 6.7, 'Station Garuntang': 0.9 },
   ];
 
   const [timeRange, setTimeRange] = useState('8hours');
@@ -47,11 +47,11 @@ const GensetPowerCharts = () => {
               <YAxis name="Power (kW)" />
               <Tooltip />
               <Legend />
-              <Line type="monotone" dataKey="Station Alpha" stroke="#0088FE" strokeWidth={2} />
-              <Line type="monotone" dataKey="Station Beta" stroke="#00C49F" strokeWidth={2} />
-              <Line type="monotone" dataKey="Station Delta" stroke="#FFBB28" strokeWidth={2} />
-              <Line type="monotone" dataKey="Station Epsilon" stroke="#FF8042" strokeWidth={2} />
-              <Line type="monotone" dataKey="Station Zeta" stroke="#8884d8" strokeWidth={2} />
+              <Line type="monotone" dataKey="Station Tarahan" stroke="#0088FE" strokeWidth={2} />
+              <Line type="monotone" dataKey="Station Tanjung Karang" stroke="#00C49F" strokeWidth={2} />
+              <Line type="monotone" dataKey="Station Garuntang" stroke="#FFBB28" strokeWidth={2} />
+              <Line type="monotone" dataKey="Station Labuan Ratu" stroke="#FF8042" strokeWidth={2} />
+              <Line type="monotone" dataKey="Station Sukamenanti" stroke="#8884d8" strokeWidth={2} />
             </LineChart>
           </ResponsiveContainer>
         );
@@ -63,12 +63,12 @@ const GensetPowerCharts = () => {
               <XAxis dataKey="time" />
               <YAxis name="Power (kW)" />
               <Tooltip />
-              <Legend />
-              <Bar dataKey="Station Alpha" fill="#0088FE" />
-              <Bar dataKey="Station Beta" fill="#00C49F" />
-              <Bar dataKey="Station Delta" fill="#FFBB28" />
-              <Bar dataKey="Station Epsilon" fill="#FF8042" />
-              <Bar dataKey="Station Zeta" fill="#8884d8" />
+              <Legend /> 
+              <Bar dataKey="Station Tarahan" fill="#0088FE" />
+              <Bar dataKey="Station Tanjung Karang" fill="#00C49F" />
+              <Bar dataKey="Station Garuntang" fill="#FFBB28" />
+              <Bar dataKey="Station Labuan Ratu" fill="#FF8042" />
+              <Bar dataKey="Station Sukamenanti" fill="#8884d8" />
             </BarChart>
           </ResponsiveContainer>
         );
@@ -81,11 +81,11 @@ const GensetPowerCharts = () => {
               <YAxis name="Power (kW)" />
               <Tooltip />
               <Legend />
-              <Area type="monotone" dataKey="Station Alpha" stackId="1" stroke="#0088FE" fill="#0088FE" />
-              <Area type="monotone" dataKey="Station Beta" stackId="1" stroke="#00C49F" fill="#00C49F" />
-              <Area type="monotone" dataKey="Station Delta" stackId="1" stroke="#FFBB28" fill="#FFBB28" />
-              <Area type="monotone" dataKey="Station Epsilon" stackId="1" stroke="#FF8042" fill="#FF8042" />
-              <Area type="monotone" dataKey="Station Zeta" stackId="1" stroke="#8884d8" fill="#8884d8" />
+              <Area type="monotone" dataKey="Station Tarahan" stackId="1" stroke="#0088FE" fill="#0088FE" />
+              <Area type="monotone" dataKey="Station Tanjung Karang" stackId="1" stroke="#00C49F" fill="#00C49F" />
+              <Area type="monotone" dataKey="Station Garuntang" stackId="1" stroke="#FFBB28" fill="#FFBB28" />
+              <Area type="monotone" dataKey="Station Labuan Ratu" stackId="1" stroke="#FF8042" fill="#FF8042" />
+              <Area type="monotone" dataKey="Station Sukamenanti" stackId="1" stroke="#8884d8" fill="#8884d8" />
             </AreaChart>
           </ResponsiveContainer>
         );
